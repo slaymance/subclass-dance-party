@@ -25,3 +25,16 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.growing{
+  border:30px solid yellow;
+  border-radius:30px;
+  position:absolute;
+  margin:-20px -20px;
+}
+
+.shrinking{
+  border:10px solid yellow;
+  border-radius:10px;
+  position:absolute;
+}
