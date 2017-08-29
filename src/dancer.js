@@ -9,7 +9,6 @@ class makeDancer {
   }
 
   step() {
-    // setTimeout(this.step.bind(this), this.timeBetweenSteps);
     setTimeout(() => this.step(), this.timeBetweenSteps);
   }
   

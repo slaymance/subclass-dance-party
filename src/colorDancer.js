@@ -6,7 +6,6 @@ class makeColorDancer extends makeDancer {
 
   step() {
     super.step();
-    console.log(this.$node.css('border-color'));
     if (this.$node.css('border-color') === 'rgb(0, 128, 0)') {
       this.$node.css({ 'border-color': 'rgb(0, 0, 128)' });
     } else {
