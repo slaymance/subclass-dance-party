@@ -18,7 +18,8 @@ $(document).ready(function() {
 
     const classesMapping = {
       'makeBlinkyDancer': makeBlinkyDancer,
-      'makeGrowingDancer': makeGrowingDancer
+      'makeGrowingDancer': makeGrowingDancer,
+      'makeColorDancer': makeColorDancer
     };
 
     let dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
@@ -28,11 +29,10 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     let dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
   });
 });
-
