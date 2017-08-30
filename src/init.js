@@ -19,9 +19,9 @@ $(document).ready(function() {
      */
 
     const classesMapping = {
-      'makeBlinkyDancer': makeBlinkyDancer,
-      'makeGrowingDancer': makeGrowingDancer,
-      'makeColorDancer': makeColorDancer
+      'BlinkyDancer': BlinkyDancer,
+      'GrowingDancer': GrowingDancer,
+      'ColorDancer': ColorDancer
     };
 
     let dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
@@ -71,7 +71,7 @@ $(document).ready(function() {
     var selectedDancer = window.dancers[$(this).data('index')];
 
     var shortestDistance;
-    var nearestDancer;
+    let nearestDancer;
     
     for (var i = 0; i < window.dancers.length; i++) {
       var distance = Math.pow(Math.pow((selectedDancer.top - window.dancers[i].top), 2) + Math.pow((selectedDancer.left - window.dancers[i].left), 2), 0.5);
@@ -81,11 +81,19 @@ $(document).ready(function() {
         shortestDistance = distance;
       }
     }
-    //nearestDancer.$node.css({'border-color': 'rgb(255, 255, 255)'});
+
+    clearTimeout(selectedDancer);
+    clearTimeout(nearestDancer);
     selectedDancer.$node.animate({top: nearestDancer.top, left: nearestDancer.left}, {duration: 'slow', complete: function() {
+      clearTimeout(selectedDancer);
+      clearTimeout(nearestDancer);
       selectedDancer.$node.animate({top: selectedDancer.top, left: selectedDancer.left}, 'slow');
     }});
+    clearTimeout(selectedDancer);
+    clearTimeout(nearestDancer);
     nearestDancer.$node.animate({top: selectedDancer.top, left: selectedDancer.left}, {duration: 'slow', complete: function() {
+      clearTimeout(selectedDancer);
+      clearTimeout(nearestDancer);
       nearestDancer.$node.animate({top: nearestDancer.top, left: nearestDancer.left}, 'slow');
     }});
   });

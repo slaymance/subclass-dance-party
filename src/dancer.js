@@ -1,4 +1,4 @@
-class makeDancer {
+class Dancer {
   constructor(top, left, timeBetweenSteps) {
     this.$node = $('<span class="dancer"></span>');
     this.timeBetweenSteps = timeBetweenSteps;

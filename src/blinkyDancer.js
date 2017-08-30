@@ -1,4 +1,4 @@
-class makeBlinkyDancer extends makeDancer {
+class BlinkyDancer extends Dancer {
   constructor(top, left, timeBetweenSteps) {
     super(top, left, timeBetweenSteps);
   }

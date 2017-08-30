@@ -5,7 +5,7 @@ describe('colorDancer', function() {
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
-    colorDancer = new makeColorDancer(10, 20, timeBetweenSteps);
+    colorDancer = new ColorDancer(10, 20, timeBetweenSteps);
   });
 
   it('should have a jQuery $node object', function() {

@@ -1,4 +1,4 @@
-class makeGrowingDancer extends makeDancer {
+class GrowingDancer extends Dancer {
   constructor(top, left, timeBetweenSteps) {
     super(top, left, timeBetweenSteps);
     this.$node.addClass('growing');
@@ -6,6 +6,7 @@ class makeGrowingDancer extends makeDancer {
 
   step() {
     super.step();
+
     if (this.$node.hasClass('growing')) {
       this.$node.removeClass('growing').addClass('shrinking');  
     } else {
